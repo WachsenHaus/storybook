@@ -15,6 +15,7 @@ export interface ButtonProps{
      * 버튼내부에 들어가는 글자를 정의합니다.
      */
     InputText?: string,
+    //
 }
 
 const ButtonStyled = styled.div<ButtonProps>`
