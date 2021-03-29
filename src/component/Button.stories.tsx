@@ -9,13 +9,15 @@ export default {
     component: Button,
     argTypes: {
         backgroundColor: { control: 'color' },
+        primaryColor: { control: 'color' },
       },
 } as Meta;
   
 const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 
-export const Border = Template.bind({});
-Border.args = {
+export const GES_BUTTON = Template.bind({});
+GES_BUTTON.args = {
   borderRadius:1,
-    InputText:"버튼",
+  InputText:"버튼",
+  primary:false
   };

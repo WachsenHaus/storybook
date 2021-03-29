@@ -14,27 +14,45 @@ export interface ButtonProps{
     /**
      * 버튼내부에 들어가는 글자를 정의합니다.
      */
-    InputText?: string,
-    //
-    //
+    InputText?: string | "버튼",
+    /**
+     * 
+     */
+    primary?: boolean,
+    /**
+     * primary 선택시 변경될 컬러입니다.
+     */
+    primaryColor?:string,
 }
 
 const ButtonStyled = styled.div<ButtonProps>`
-background-color: red;
-border-radius: 1%;
+background-color: white;
+border : 1px solid black;
+border-radius: 10%;
 width: 5rem;
+height: 5rem;
+display : flex;
+justify-content: center;
+align-items : center;
 
 background-color: ${props => props.backgroundColor};
+
 border-radius: ${ props => `${props.borderRadius}%}`}
+${props => (
+    props.primary && `
+        background-color: ${props.primaryColor};
+    `
+)}
+
 `
 
 export const Button:React.FC<ButtonProps> = ({
-    borderRadius,backgroundColor,InputText
+    borderRadius,backgroundColor,InputText,primary = false,primaryColor
 }) => {
 
     return(
-        <ButtonStyled borderRadius={borderRadius} backgroundColor={backgroundColor}>
-        {InputText}
+        <ButtonStyled  borderRadius={borderRadius} primary={primary} backgroundColor={backgroundColor} primaryColor={primaryColor}>
+            {InputText}
         </ButtonStyled>
     )
 
