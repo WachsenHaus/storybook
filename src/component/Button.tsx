@@ -16,6 +16,7 @@ export interface ButtonProps{
      */
     InputText?: string,
     //
+    //
 }
 
 const ButtonStyled = styled.div<ButtonProps>`
