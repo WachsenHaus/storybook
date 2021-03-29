@@ -15,4 +15,5 @@ const Template: Story<InputProps> = (args) => <Input {...args} />;
 export const text = Template.bind({});
 text.args = {
     inputText: "텍스트를 입력하시오.",
+    color: "색상을 정하시오."
   };

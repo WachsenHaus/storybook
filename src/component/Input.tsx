@@ -1,21 +1,20 @@
 import React from "react";
-import "./input.css";
-
 
 export interface InputProps {
     /*
     * 텍스트를 입력합니다.
     */
     inputText:string;
+    color:string;
 }
 
 
 export const Input: React.FC<InputProps> = ({
-    inputText
+    inputText,color
 }) => {
 
     return(
-        <input value={inputText}>
+        <input value={inputText} color={color}>
         </input>
     )
 
