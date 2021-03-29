@@ -1,3 +1,4 @@
+
 # 스토리북 주소
 <https://www.chromatic.com/builds?appId=606120d768068700215f44bd>
 # 스토리북의 사용 목적
@@ -17,6 +18,6 @@ ex) git push origin master
   * **빌드번호를 클릭합니다.**
   * *`View Storybook` 을 클릭하여 해당 빌드버전의 `컴포넌트`들을 확인합니다.*
 
-## 특정 컴포넌트에 대한 확인 및 리뷰 가능
-
+## 상태가 변경될 때 변경되는 상태를 바로 확인 할 수 있다.
+![state_change_test](https://user-images.githubusercontent.com/59411545/112790466-5926a400-909a-11eb-8649-299533695768.PNG)
 
