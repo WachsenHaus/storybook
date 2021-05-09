@@ -1,6 +1,11 @@
 
 # 스토리북 주소
+<https://wachsenhaus.github.io/storybook/?path=/story/ges-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EA%B7%B8%EB%A6%B0%EC%9D%B4%ED%8E%99%ED%8A%B8%EC%86%94%EB%A3%A8%EC%85%98--page>
+
+
+## 빌드별로 볼수있음 ( 개발자용 )
 <https://www.chromatic.com/builds?appId=606120d768068700215f44bd>
+
 # 스토리북의 사용 목적
 1. React로 사고하기를 달성할 수 있는 `완벽히 분리된`, `재사용 가능한` 컴포넌트 단위의 작업이 가능해집니다. 
 2. 수많은 컴포넌트가 가지고 있는 수많은 state를 개발자가 기억할 필요가 없어집니다. 
