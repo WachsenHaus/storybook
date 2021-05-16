@@ -1,6 +1,5 @@
 import { Chip, Grid, GridJustification, Paper, Theme, withStyles } from '@material-ui/core';
 import { createStyles } from '@material-ui/styles';
-import React from 'react';
 
 const styles = ({ palette, spacing }: Theme) =>
   createStyles({
