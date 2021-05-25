@@ -2,7 +2,7 @@ import React from 'react';
 import { createStyles, Theme, withStyles } from '@material-ui/core/styles';
 import { AppBar, Button, IconButton, Toolbar, Typography } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-const styles = ({ palette, spacing, mixins }: Theme) =>
+const styles = ({ mixins }: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
