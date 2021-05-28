@@ -1,4 +1,5 @@
 import React, { Fragment, Component, FC } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { createStyles, Theme, withStyles } from '@material-ui/core/styles';
 import { useState } from 'react';
 import AppBar from '@material-ui/core/AppBar';
@@ -34,17 +35,22 @@ interface Props {
   };
   title?: string;
 }
+
 const MyToolbar = withStyles(styles)(({ classes, title }: Props) => {
   const [state, setState] = useState({
     anchor: null,
   });
-  const MenuItems: FC<{
-    closeMenu: () => void;
-  }> = ({ closeMenu }) => (
+  const MenuItems: FC = () => (
     <Fragment>
-      <MenuItem onClick={closeMenu}>Profile</MenuItem>
-      <MenuItem onClick={closeMenu}>My account</MenuItem>
-      <MenuItem onClick={closeMenu}>Logout</MenuItem>
+      <MenuItem component={Link} to="/">
+        Home
+      </MenuItem>
+      <MenuItem component={Link} to="/page2">
+        Page 2
+      </MenuItem>
+      <MenuItem component={Link} to="/page3">
+        Page 3
+      </MenuItem>
     </Fragment>
   );
   const RightButton: FC = () => <Button color="inherit">Login</Button>;
@@ -60,7 +66,7 @@ const MyToolbar = withStyles(styles)(({ classes, title }: Props) => {
             <MenuIcon />
           </IconButton>
           <Menu anchorEl={state.anchor} open={Boolean(state.anchor)} onClose={closeMenu}>
-            <MenuItems closeMenu={closeMenu} />
+            <MenuItems />
           </Menu>
           <Typography variant="h6" color="inherit" className={classes.flex}>
             {title}
@@ -73,12 +79,39 @@ const MyToolbar = withStyles(styles)(({ classes, title }: Props) => {
   );
 });
 
-const ToolbarAbstraction = withStyles(styles)(({ classes, ...props }: Props) => {
-  return (
-    <div className={classes.root}>
-      <MyToolbar {...props} title={'툴바 추상화 입니다.'} />
-    </div>
-  );
-});
+const WithNavigation = withStyles(styles)(({ classes }: Props) => (
+  <div className={classes.root}>
+    <Route
+      exact
+      path="/"
+      render={() => (
+        <Fragment>
+          <MyToolbar title="Home" />
+          <Typography>Home</Typography>
+        </Fragment>
+      )}
+    />
+    <Route
+      exact
+      path="/page2"
+      render={() => (
+        <Fragment>
+          <MyToolbar title="Page 2" />
+          <Typography>Page 2</Typography>
+        </Fragment>
+      )}
+    />
+    <Route
+      exact
+      path="/page3"
+      render={() => (
+        <Fragment>
+          <MyToolbar title="Page 3" />
+          <Typography>Page 3</Typography>
+        </Fragment>
+      )}
+    />
+  </div>
+));
 
-export default ToolbarAbstraction;
+export default WithNavigation;
