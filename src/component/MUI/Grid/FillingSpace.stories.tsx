@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import FillingSpace from './FillingSpace';
 
 export default {
-  title: 'GES-컴포넌트/Grid',
+  title: 'MUI-컴포넌트/Grid',
   component: FillingSpace,
 } as Meta;
 

@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import FixedPosition from './FixedPosition';
 
 export default {
-  title: 'GES-컴포넌트/Appbar',
+  title: 'MUI-컴포넌트/Appbar',
   component: FixedPosition,
   argTypes: {},
 } as Meta;

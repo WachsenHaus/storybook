@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import AbstractingContainersAndItems from './AbstractingContainersAndItems';
 
 export default {
-  title: 'GES-컴포넌트/Grid',
+  title: 'MUI-컴포넌트/Grid',
   component: AbstractingContainersAndItems,
   argTypes: {},
 } as Meta;
