@@ -35,7 +35,9 @@ interface Props {
   title?: string;
 }
 const MyToolbar = withStyles(styles)(({ classes, title }: Props) => {
-  const [state, setState] = useState({
+  const [state, setState] = useState<{
+    anchor: (EventTarget & HTMLButtonElement) | null;
+  }>({
     anchor: null,
   });
   const MenuItems: FC<{

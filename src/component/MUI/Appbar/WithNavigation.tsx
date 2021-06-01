@@ -1,7 +1,6 @@
-import React, { Fragment, Component, FC } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { createStyles, Theme, withStyles } from '@material-ui/core/styles';
-import { useState } from 'react';
+import React, { useState, Fragment, FC } from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { createStyles, withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -37,7 +36,9 @@ interface Props {
 }
 
 const MyToolbar = withStyles(styles)(({ classes, title }: Props) => {
-  const [state, setState] = useState({
+  const [state, setState] = useState<{
+    anchor: (EventTarget & HTMLButtonElement) | null;
+  }>({
     anchor: null,
   });
   const MenuItems: FC = () => (
@@ -79,39 +80,42 @@ const MyToolbar = withStyles(styles)(({ classes, title }: Props) => {
   );
 });
 
-const WithNavigation = withStyles(styles)(({ classes }: Props) => (
-  <div className={classes.root}>
-    <Route
-      exact
-      path="/"
-      render={() => (
-        <Fragment>
-          <MyToolbar title="Home" />
-          <Typography>Home</Typography>
-        </Fragment>
-      )}
-    />
-    <Route
-      exact
-      path="/page2"
-      render={() => (
-        <Fragment>
-          <MyToolbar title="Page 2" />
-          <Typography>Page 2</Typography>
-        </Fragment>
-      )}
-    />
-    <Route
-      exact
-      path="/page3"
-      render={() => (
-        <Fragment>
-          <MyToolbar title="Page 3" />
-          <Typography>Page 3</Typography>
-        </Fragment>
-      )}
-    />
-  </div>
-));
+const WithNavigation = withStyles(styles)(({ classes }: Props) => {
+  return (
+    <div className={classes.root}>
+      <Router>
+        <Switch>
+          <Route
+            path="/page2"
+            render={() => (
+              <Fragment>
+                <MyToolbar title="Page 2" />
+                <Typography>Page 2</Typography>
+              </Fragment>
+            )}
+          />
+          <Route
+            path="/page3"
+            render={() => (
+              <Fragment>
+                <MyToolbar title="Page 3" />
+                <Typography>Page 3</Typography>
+              </Fragment>
+            )}
+          />
+          <Route
+            path="/"
+            render={() => (
+              <Fragment>
+                <MyToolbar title="Home" />
+                <Typography>Home</Typography>
+              </Fragment>
+            )}
+          />
+        </Switch>
+      </Router>
+    </div>
+  );
+});
 
 export default WithNavigation;
