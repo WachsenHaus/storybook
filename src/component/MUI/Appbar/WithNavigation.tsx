@@ -83,37 +83,38 @@ const MyToolbar = withStyles(styles)(({ classes, title }: Props) => {
 const WithNavigation = withStyles(styles)(({ classes }: Props) => {
   return (
     <div className={classes.root}>
-      <Router>
-        <Switch>
-          <Route
-            path="/page2"
-            render={() => (
-              <Fragment>
-                <MyToolbar title="Page 2" />
-                <Typography>Page 2</Typography>
-              </Fragment>
-            )}
-          />
-          <Route
-            path="/page3"
-            render={() => (
-              <Fragment>
-                <MyToolbar title="Page 3" />
-                <Typography>Page 3</Typography>
-              </Fragment>
-            )}
-          />
-          <Route
-            path="/"
-            render={() => (
-              <Fragment>
-                <MyToolbar title="Home" />
-                <Typography>Home</Typography>
-              </Fragment>
-            )}
-          />
-        </Switch>
-      </Router>
+      {/* <Router> */}
+      <Switch>
+        <Route
+          exact
+          path="/"
+          render={() => (
+            <Fragment>
+              <MyToolbar title="Home" />
+              <Typography>Home</Typography>
+            </Fragment>
+          )}
+        />
+        <Route
+          path="/page2"
+          render={() => (
+            <Fragment>
+              <MyToolbar title="Page 2" />
+              <Typography>Page 2</Typography>
+            </Fragment>
+          )}
+        />
+        <Route
+          path="/page3"
+          render={() => (
+            <Fragment>
+              <MyToolbar title="Page 3" />
+              <Typography>Page 3</Typography>
+            </Fragment>
+          )}
+        />
+      </Switch>
+      {/* </Router> */}
     </div>
   );
 });
