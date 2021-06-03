@@ -71,8 +71,6 @@ const NavItem = (props) => {
 
 const DrawerItemNavigation = withStyles(styles)(({ classes }: Props) => {
   const [open, setOpen] = useState(false);
-  let location = useLocation();
-
   return (
     <Grid container justify="space-between">
       <Grid item className={classes.alignContent}>
