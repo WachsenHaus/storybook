@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { createStyles, Theme, withStyles } from '@material-ui/core/styles';
 
-import { BaseCSSProperties } from '@material-ui/styles';
-import { makeStyles, DefaultTheme } from '@material-ui/styles';
+import { BaseCSSProperties, DefaultTheme } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
@@ -12,7 +12,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import AddIcon from '@material-ui/icons/Add';
 import { DefaultComponentProps } from '@material-ui/core/OverridableComponent';
 
-const useStyles = makeStyles((theme: DefaultTheme) => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
