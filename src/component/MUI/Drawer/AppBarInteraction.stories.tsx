@@ -16,8 +16,3 @@ const Template: Story = (args) => <AppBarInteraction {...args} />;
 export const 앱바_상호작용 = Template.bind({});
 앱바_상호작용.args = {};
 앱바_상호작용.argTypes = {};
-
-// storiesOf('Chapter 3 Drawers', module)
-//   .addDecorator(withKnobs)
-//   .addDecorator(StoryRouter())
-//   .add('Drawer Item Navigation', () => <DrawerItemNavigation />);

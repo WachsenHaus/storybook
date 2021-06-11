@@ -15,8 +15,3 @@ const Template: Story = (args) => <DrawerItemNavigation {...args} />;
 export const 드로우_내비게이션 = Template.bind({});
 드로우_내비게이션.args = {};
 드로우_내비게이션.argTypes = {};
-
-// storiesOf('Chapter 3 Drawers', module)
-//   .addDecorator(withKnobs)
-//   .addDecorator(StoryRouter())
-//   .add('Drawer Item Navigation', () => <DrawerItemNavigation />);
