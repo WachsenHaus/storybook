@@ -6,19 +6,10 @@ const config = { mass: 5, tension: 2000, friction: 200 };
 
 const UseTrailDemoPage = () => {
   const [active, set] = useState(true);
-  //   const [trail,api] = useTrail(items.length, {
-  //     config,
-  //     opacity: toggle ? 1 : 0,
-  //     x: toggle ? 0 : 20,
-  //     height: toggle ? 80 : 0,
-  //     from: { opacity: 0, x: 20, height: 0 },
-  //   });
   const [trail, api] = useTrail(items.length, () => ({
     config,
-    // opacity: toggle ? 1 : 0,
-    // x: toggle ? 0 : 20,
-    // height: toggle ? 80 : 0,
-    from: { opacity: 0, x: 20, height: 0 },
+
+    from: { opacity: 0, x: 20, height: 0, background: 'blue' },
   }));
 
   useEffect(() => {}, []);
@@ -27,8 +18,9 @@ const UseTrailDemoPage = () => {
     if (active) {
       api.start({
         opacity: 1,
-        x: 0,
+        x: 20,
         height: 80,
+        background: 'red',
       });
       set(false);
     }
@@ -37,6 +29,7 @@ const UseTrailDemoPage = () => {
   return (
     <div className="useTrailDemoPageSection">
       <div className="useTrailDemo" onClick={onClick}>
+        눌러봐요
         {trail.map(({ x, height, ...rest }, index) => (
           <animated.div
             key={items[index]}
@@ -48,11 +41,12 @@ const UseTrailDemoPage = () => {
           >
             <animated.div
               onClick={() => {
-                alert('dd');
+                // alert('dd');
                 api.start({
                   opacity: 0,
                   x: 20,
                   height: 0,
+                  background: 'blue',
                 });
                 set(true);
               }}
